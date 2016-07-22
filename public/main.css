@@ -1,0 +1,87 @@
+/****** Colors ******/
+/*
+#85DB18 lime
+#CDE855 avocado
+#A7C520 apple
+#493F0B bark
+#F5F6D4 paper
+*/
+/****** Mixins ******/
+/****** Styles ******/
+* {
+  box-sizing: border-box; }
+
+body {
+  font-size: 1em;
+  color: #85DB18;
+  background-color: #fafae9; }
+
+h1 {
+  color: #5b9610; }
+
+.light {
+  color: #85DB18; }
+
+a, a:active, a:hover, a:visited {
+  color: #85DB18; }
+
+div#main {
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+input {
+  width: 200px;
+  border: 0;
+  color: #A7C520;
+  background-color: #FFFFFF; }
+  input:focus {
+    outline: none;
+    -webkit-box-shadow: 0 0 15px #85DB18;
+    -moz-box-shadow: 0 0 15px #85DB18;
+    box-shadow: 0 0 15px #85DB18; }
+  input::-webkit-input-placeholder {
+    color: #85DB18; }
+  input:-moz-placeholder {
+    color: #85DB18; }
+  input::-moz-placeholder {
+    color: #85DB18; }
+  input:-ms-input-placeholder {
+    color: #85DB18; }
+
+div > input {
+  width: 200px; }
+
+li input {
+  width: 180; }
+
+div > input, li {
+  border: 2px solid #5b9610;
+  padding: 10px; }
+
+form, ul {
+  margin: 0; }
+
+ul {
+  padding-left: 0; }
+
+li {
+  width: 200px;
+  list-style-type: none;
+  color: #5b9610;
+  background-color: #FFFFFF; }
+
+div.delete {
+  float: right; }
+
+@media screen and (min-width: 460px) {
+  body {
+    font-size: 2em; }
+  input {
+    width: 400px; }
+  div > input {
+    width: 400px; }
+  li input {
+    width: 380; }
+  li {
+    width: 400px; } }

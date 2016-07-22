@@ -1,0 +1,117 @@
+/****** Colors ******/
+
+$light: #CDE855;
+$emphasis: #85DB18;
+$dark: #493F0B;
+$complement: #A7C520;
+$background: #FFFFFF;
+$other: #F5F6D4;
+
+/*
+#85DB18 lime
+#CDE855 avocado
+#A7C520 apple
+#493F0B bark
+#F5F6D4 paper
+*/
+
+/****** Mixins ******/
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
+/****** Styles ******/
+* {
+    box-sizing: border-box;
+}
+body {
+    font-size: 1em;
+    color: $emphasis;
+    background-color: lighten($other, 5%);
+}
+h1 {
+    color: darken($emphasis, 15%);
+}
+.light {
+    color: $emphasis;
+}
+a, a:active, a:hover, a:visited {
+    color: $emphasis;
+}
+div#main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+input {
+    width: 200px;
+    border: 0;
+    color: $complement;
+    background-color: $background;
+    &:focus {
+        outline: none;
+        @include box-shadow(0, 0, 15px, $emphasis);
+    }
+    @include placeholder {
+        color: $emphasis;
+    }
+}
+div>input {
+    width: 200px;
+}
+li input {
+    width: 180;
+}
+div>input, li {
+    border: 2px solid darken($emphasis, 15%);
+    padding: 10px;
+}
+form, ul {
+    margin: 0;
+}
+ul {
+    padding-left: 0;
+}
+li {
+    width: 200px;
+    list-style-type: none;
+    color: darken($emphasis, 15%);
+    background-color: $background;
+}
+div.delete {
+    float: right;
+}
+
+@media screen and (min-width: 460px) {
+    body {
+        font-size: 2em;
+    }
+    input {
+        width: 400px;
+    }
+    div>input {
+        width: 400px;
+    }
+    li input {
+        width: 380;
+    }
+    li {
+        width: 400px;
+    }
+}

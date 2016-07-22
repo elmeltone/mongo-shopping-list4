@@ -1,0 +1,11 @@
+{
+    "production": {
+        "url": "mongodb://elmeltone:123Onward@ds019063.mlab.com:19063/mongo-shopping-list"
+    },
+    "test": {
+        "url": "mongodb://localhost/shopping-list-test"
+    },
+    "development": {
+        "url": "mongodb://localhost/shopping-list-dev"
+    }
+}
